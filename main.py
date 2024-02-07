@@ -14,9 +14,11 @@ def load_users():
     global users
     users = json.load(open(users_path, "r"))
 
+
 @bot.message_handler(commands=['all', "everyone", "все", "ау"])
 def all_handler(message: telebot.types.Message):
-    msg = "<b>⭐Ау животные вас отметили:</b>"
+    # msg = "<b>⭐Ау животные вас отметили:</b>"
+    msg = "<b>⭐Все:</b>\n"
     for i in users:
         if i[0] != "@":
             msg += f"@{i} "
